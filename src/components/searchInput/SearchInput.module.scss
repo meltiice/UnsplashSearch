@@ -1,0 +1,29 @@
+.input {
+    font-size: 16px;
+    height: auto;
+    width: calc(100% - 8px - 83px);
+    border-radius: 12px;
+    padding: 14px 8px 14px 10px;
+    display: flex;
+    justify-content: left;
+    gap: 8px;
+    input {
+        font-size: inherit;
+        padding: 0;
+        color: #9C9C9C;
+        background-color: transparent;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    img {
+        padding: 0;
+        margin: 0;
+    }
+    background-color: #EEEEEE;
+
+    .close {
+        background-color: red;
+    }
+}

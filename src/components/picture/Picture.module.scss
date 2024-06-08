@@ -1,0 +1,8 @@
+.picture {
+    img {
+        border: 1px solid #ebebeb;
+        border-radius: 4px;
+        width: calc(100vw / 3 - 16px);
+        height: calc(100vw / 3 - 16px);
+    }
+}
