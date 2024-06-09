@@ -14,6 +14,16 @@ export const Gallery = () => {
             <Picture/>
             <Picture/>
             <Picture/>
+            <Picture/>
+            <Picture/>
+            <Picture/>
+            <Picture/>
+            <Picture/>
+            <Picture/>
+            <Picture/>
+            <Picture/>
+            <Picture/>
+            <Picture/>
         </div>
     )
 }
