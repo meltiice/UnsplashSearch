@@ -5,3 +5,9 @@
         font-size: 16px;
     }
 }
+
+@media (min-width: 1020px) {
+    .noResults { 
+        padding: 40px 0; 
+    }
+}

@@ -12,4 +12,19 @@
     display: block;
     margin-left: auto;
     padding: 16px 8px;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (min-width: 1020px) {
+    .openWindow {
+        background-color: transparent;
+        position: absolute;
+        top: 24px;
+        right: 28px;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+    }
 }

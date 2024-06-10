@@ -8,8 +8,25 @@
     height: 100vh;
     border-radius: 12px; 
     z-index: 2;
-    img {
+    & > img {
         width: 100%;
         height: auto;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1020px) {
+    .open {
+        background-color: rgba(0, 0, 0, 0.3);
+        height: 100vh;
+        top: 0;
+        left: 0;
+        border: none;
+        border-radius: 0;
+
+        & > img {
+            padding: 40px 92px 40px 80px;
+            height: 100%;
+        }
     }
 }

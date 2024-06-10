@@ -14,7 +14,7 @@
 }
 
 @media (min-width: 1019px) {
-  * {
+  /* {
     -ms-overflow-style: scroll; 
     scrollbar-color: #c1c1c1 #fafafa;
     scrollbar-width: thin;
@@ -22,7 +22,7 @@
   }
   ::-webkit-scrollbar {
     display: block; 
-  }
+  }*/
 }
 .App {
   overflow-anchor: none;
