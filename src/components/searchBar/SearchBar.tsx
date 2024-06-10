@@ -32,7 +32,8 @@ export const SearchBar = observer(() => {
                 id='search_input' 
                 onChange={(e) => setInputValue(e.target.value)} 
                 onFocus={inputFocus} 
-                placeholder='Телефоны, яблоки, груши'/>
+                placeholder='Телефоны, яблоки, груши'
+                onKeyUp={(e) => { if (e.code==='Enter'){searchHandle()}}}/>
             <CloseButton clickFunc={(e)=>closeInput(e)}
             classname={classesClose}
             />
