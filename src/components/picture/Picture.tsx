@@ -11,6 +11,7 @@ export const Picture = observer(({piclink, piclinkfull}:Props) => {
     const closePicture = () => {
         setOpenPic(null);
     }
+
     return (
         <React.Fragment>
         <div className={styles.picture} onClick={(e) => openPicture(e)}>

@@ -7,6 +7,10 @@
     display: flex;
     justify-content: left;
     gap: 8px;
+    background-color: #EEEEEE;
+    &:hover{
+        background-color: #E6E6E6;
+    }
     input {
         font-size: inherit;
         padding: 0;
@@ -24,7 +28,6 @@
         padding: 0;
         margin: 0;
     }
-    background-color: #EEEEEE;
 
     .close {
         background-color: red;
@@ -35,4 +38,29 @@
     gap: 8px;
     justify-content: center;
     height: 50px;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    width: calc(100vw - 32px);
+    height: auto;
+    padding: 32px 0 16px 0;
+    top: 0;
 }
+
+.searchbar--start {
+    margin-top: 33vh;
+}
+
+@media (min-width: 700px) {
+    .input {
+        max-width: 420px;
+    }
+    .searchbar {
+        justify-content: left;
+    }
+    .searchbar--start {
+        margin-top: 33vh;
+        justify-content: center;
+    }
+}
+    
