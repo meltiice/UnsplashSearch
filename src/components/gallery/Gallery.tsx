@@ -14,8 +14,7 @@ export const Gallery = observer(() => {
     //const [pictureComponents, setPictureComponents] = useState <Array<ReactElement>> ([]);
     const loadMoreHandle = () => {
         picturesStore.loadMore();
-        service.getPhotos(picturesStore.currentSearch, picturesStore.page+1, picturesStore.getPictures, 
-            loadingStore.setLoader, loadingStore.removeLoader, loadingStore.startSearching)
+        service.getMorePhotos(picturesStore.currentSearch, picturesStore.page+1, picturesStore.getPictures)
     }
     //console.log(pictureComponents.length, picturesStore.pictures.length)
     /*const picturesInStore = picturesStore.pictures.map((pic, i) => {
