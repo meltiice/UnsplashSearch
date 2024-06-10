@@ -1,8 +1,9 @@
 .gallery {
-    padding: 32px 0;
+    padding: 32px 0 0 0;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    height: calc(100vh - 98px);
-    overflow: scroll;
+    height: calc(100vh);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
