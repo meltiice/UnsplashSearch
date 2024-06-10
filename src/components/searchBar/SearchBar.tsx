@@ -20,7 +20,7 @@ export const SearchBar = observer(() => {
     }
 
     const inputFocus = () => {
-        setClassesClose('visible');
+        setClassesClose('searchInput');
     }
     const closeInput = (e:any) => {
         setInputValue('');

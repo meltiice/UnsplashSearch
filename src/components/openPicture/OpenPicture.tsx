@@ -2,10 +2,10 @@ import { CloseButton } from '../closeButton/CloseButton'
 import styles from './OpenPicture.module.scss'
 export const OpenPicture = ({href, closeWindow} : Props) => {
     return (
-        <div className={styles.open}>
+        <li className={styles.open}>
             <CloseButton classname='openWindow' clickFunc={closeWindow}/>
             <img src={href} alt='#'/>
-        </div>
+        </li>
     )
 }
 

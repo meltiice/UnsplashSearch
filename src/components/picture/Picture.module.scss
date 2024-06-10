@@ -1,6 +1,7 @@
 .picture {
     width: auto;
     height: max-content;
+    overflow-anchor: none;
     img {
         border: 1px solid #ebebeb;
         border-radius: 4px;
@@ -14,8 +15,8 @@
     .picture {
         img {
             border-radius: 6px;
-            width: calc((100vw - 56px - 12px) / 4);
-            height: calc((100vw - 56px  - 12px) / 4);
+            width: calc((100vw - 56px) / 4);
+            height: calc((100vw - 56px) / 4);
         }
     }
 }

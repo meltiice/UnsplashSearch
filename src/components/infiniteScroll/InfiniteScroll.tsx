@@ -1,14 +1,12 @@
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer'
+
 export const InfiniteScroll = ({loadMore} : Props) => {
-    const [ref, inView] = useInView({
-        triggerOnce: false,
-    });
+    const [ref, inView] = useInView({});
     useEffect(() => {
         console.log(inView)
         if (inView) {
-            console.log('useeffect')
-            loadMore()
+            loadMore();
         }
     }, [inView])
 
