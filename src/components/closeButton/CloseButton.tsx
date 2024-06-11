@@ -4,7 +4,7 @@ import styles from './CloseButton.module.scss'
 
 export const CloseButton = ({classname, clickFunc} : Props) => {
     return (<button onClick={clickFunc} className={styles[classname]}>
-        <img src={(window.innerWidth >= 1020 && classname === "openWindow") ? crossDesctop : cross} alt='close button'/>
+        <img src={(classname === "openWindow") ? crossDesctop : cross} alt='close button'/>
     </button>)
 }
 

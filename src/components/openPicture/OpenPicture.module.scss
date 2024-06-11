@@ -1,14 +1,15 @@
 .open {
     position: absolute;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid #eee;
-    top: 16px;
+    top: -1px;
     left: -1px;
     width: calc(100vw + 2px);
     height: 100vh;
-    border-radius: 12px; 
-    z-index: 2;
+    border-radius: 0; 
+    z-index: 1;
     & > img {
+        z-index: 1;
         width: 100%;
         height: auto;
         object-fit: cover;
@@ -18,7 +19,6 @@
 @media (min-width: 1020px) {
     .open {
         background-color: rgba(0, 0, 0, 0.3);
-        height: 100vh;
         top: 0;
         left: 0;
         border: none;
