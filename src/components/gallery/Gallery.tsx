@@ -3,35 +3,25 @@ import styles from './Gallery.module.scss'
 import Picture from "../picture/Picture"
 import { Loader } from "../loader/Loader";
 import { NoResults } from "../noResults/NoResults";
-import { UnsplashService } from "../unplashService/UnsplashService";
+import { UnsplashService } from "../unsplashService/UnsplashService";
 import { InfiniteScroll } from "../infiniteScroll/InfiniteScroll";
-import { ReactElement, useEffect, useState } from "react";
 import { useStore } from "../../stores/store";
 
 export const Gallery = observer(() => {
     const service = new UnsplashService();
     const { picturesStore, loadingStore } = useStore();
-    //const [pictureComponents, setPictureComponents] = useState <Array<ReactElement>> ([]);
     const loadMoreHandle = () => {
         picturesStore.loadMore();
-        service.getMorePhotos(picturesStore.currentSearch, picturesStore.page+1, picturesStore.getPictures)
+        service.getMorePhotos(picturesStore.currentSearch, picturesStore.page+1, picturesStore.getPictures, 
+)
     }
-    //console.log(pictureComponents.length, picturesStore.pictures.length)
-    /*const picturesInStore = picturesStore.pictures.map((pic, i) => {
-        if (i >= pictureComponents.length) {
-            return <Picture key={pic.picture}
-            piclink={pic.picture} 
-            piclinkfull={pic.pictureFull}/>
-        }
-    }).filter(el => el!==undefined) as ReactElement[];*/
-    //useEffect (() => setPictureComponents([...pictureComponents, ...picturesInStore]), []);
-
     return (
         <ul className={styles.gallery}>
             { loadingStore.loaded ? picturesStore.pictures.map((pic) => {
                 return <Picture key={pic.picture}
-                piclink={pic.picture} 
-                piclinkfull={pic.pictureFull}/>
+                picLink={pic.picture} 
+                picLinkfull={pic.pictureFull}
+                alt_description={pic.alt_description}/>
             })
              : <Loader/>}
             { !loadingStore.start && loadingStore.loaded && picturesStore.pictures.length === 0 ?
@@ -41,11 +31,3 @@ export const Gallery = observer(() => {
         </ul>
     )
 })
-
-/*
-picturesStore.pictures.map((pic) => {
-                return <Picture key={pic.picture}
-                piclink={pic.picture} 
-                piclinkfull={pic.pictureFull}/>
-            })
-*/

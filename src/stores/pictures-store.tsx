@@ -1,8 +1,11 @@
 import { makeAutoObservable } from "mobx";
-interface pictureData {
+
+export interface pictureData {
     picture: string,
-    pictureFull: string
+    pictureFull: string,
+    alt_description: string,
 }
+
 class PicturesStore {
     pictures : Array<pictureData> = [];
     page : number = 1;
@@ -14,12 +17,10 @@ class PicturesStore {
 
     getPictures = (pictureUrls : Array<pictureData>) => {
         this.pictures.push(...pictureUrls);
-        console.log('get pictures ', this.pictures)
     }
 
     clearStore = () => {
         this.pictures = [];
-        console.log('clear store')
         this.page = 1;
     }
 

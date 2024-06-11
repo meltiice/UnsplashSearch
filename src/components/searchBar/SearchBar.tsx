@@ -3,18 +3,20 @@ import { CloseButton } from '../closeButton/CloseButton'
 import styles from './SearchBar.module.scss'
 import icon_search from './search.svg'
 import { Button } from '../button/Button'
-import { UnsplashService } from '../unplashService/UnsplashService'
-import picturesStore from '../../stores/pictures-store'
+import { UnsplashService } from '../unsplashService/UnsplashService'
 import { observer } from 'mobx-react-lite'
-import loadingStore from '../../stores/loading-store'
+import { useStore } from '../../stores/store'
 
 export const SearchBar = observer(() => {
     const service = new UnsplashService();
-    const { loaded, setLoader, removeLoader, startSearching} = loadingStore;
-    const { getPictures, clearStore, setCurrentSearch } = picturesStore;
+    const { picturesStore, loadingStore } = useStore();
+    const {getPictures, clearStore, setCurrentSearch } = picturesStore;
+    const {loaded, setLoader, removeLoader, startSearching} = loadingStore;
+
     const [classesClose, setClassesClose ] = useState('default');
     const [classesSearchBar, setClassesSearchBar ] = useState('searchbar searchbar--start');
     const [inputValue, setInputValue] = useState('');
+
     if (!loaded && classesSearchBar!=='searchbar') {
         setClassesSearchBar('searchbar');
     }
@@ -22,7 +24,7 @@ export const SearchBar = observer(() => {
     const inputFocus = () => {
         setClassesClose('searchInput');
     }
-    const closeInput = (e:any) => {
+    const closeInput = () => {
         setInputValue('');
         setCurrentSearch('')
         setClassesClose('default');
@@ -30,12 +32,12 @@ export const SearchBar = observer(() => {
     const searchHandle = () => {
         setCurrentSearch(inputValue)
         clearStore();
-        service.getPhotos(inputValue, 1, getPictures, setLoader, removeLoader, startSearching);
+        service.getPhotos(inputValue, getPictures, setLoader, removeLoader, startSearching);
     }
     return (
     <div className={classesSearchBar.split(' ').map(el => styles[el]).join(' ')}>
         <div className={styles.input}>
-            <img src={icon_search} alt="#"/>
+            <img src={icon_search} alt="search icon"/>
             <input type='text' 
                 value={inputValue} 
                 id='search_input' 
@@ -44,7 +46,7 @@ export const SearchBar = observer(() => {
                 placeholder='Телефоны, яблоки, груши'
                 onKeyUp={(e) => { if (e.code==='Enter'){searchHandle()}}}/>
             <CloseButton 
-                clickFunc={(e)=>closeInput(e)}
+                clickFunc={()=>closeInput()}
                 classname={classesClose}
                 />
         </div>
