@@ -3,7 +3,7 @@ import styles from './Loader.module.scss'
 export const Loader = () => {
 
    return (
-   <div id={styles.loader}>
+   <div id={styles.loader} data-testid={styles.loader}>
         <div id={styles['loader-row']}>
         <div id={styles['loader-col']}>
             <div id={styles.floatingBarsG}>

@@ -32,7 +32,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": ["testing-library"],
+    "rules": {
+      "testing-library/prefer-screen-queries": "off",
+      "testing-library/no-wait-for-multiple-assertions": "off"
+    }
   },
   "browserslist": {
     "production": [
