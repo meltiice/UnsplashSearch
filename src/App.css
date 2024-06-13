@@ -8,6 +8,12 @@
   scrollbar-width: thin;
 }
 
+html,body {    
+  -webkit-overflow-scrolling : touch !important;
+  overflow: auto !important;
+  height: 100% !important;
+}
+
 @media (max-width: 1019px) {
   * { 
     -ms-overflow-style: none;
@@ -26,4 +32,10 @@
   overflow-x: hiddenv;
   height: 100vh;
   width: 100vw;
+}
+
+@media (min-width: 1020px) {
+  .App {
+    padding: 64px 80px 0 80px;
+  }
 }

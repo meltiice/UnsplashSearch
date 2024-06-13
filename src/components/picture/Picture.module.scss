@@ -24,17 +24,18 @@
 @media (min-width: 1020px) {
     .picture {
         img {
-            width: calc((100vw - 64px - 12px) / 5);
-            height: calc((100vw - 64px  - 12px) / 5);
+            width: calc((100vw - 192px - 12px) / 5);
+            height: calc((100vw - 192px  - 12px) / 5);
         }
     }
 }
 
 @media (min-width: 1200px) {
     .picture {
-        img {
-            width: calc((100vw - 72px - 12px) / 6);
-            height: calc((100vw - 72px  - 12px) / 6);
+        .img {
+            width: calc((100vw - 200px - 12px) / 6);
+            height: calc((100vw - 200px  - 12px) / 6);
+            display: inline-block;
         }
     }
 }

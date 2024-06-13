@@ -8,9 +8,6 @@
     justify-content: left;
     gap: 8px;
     background-color: #EEEEEE;
-    &:hover{
-        background-color: #E6E6E6;
-    }
     input {
         width: calc(100% - 19px - 8px);
         font-size: inherit;
@@ -21,6 +18,7 @@
         &:focus {
             background-color: transparent;
             outline: none;
+            color: black;
             &::placeholder {
                 color: transparent;
             }
@@ -47,13 +45,13 @@
     background-color: white;
     width: calc(100vw - 32px);
     height: auto;
-    padding: 30px 0 16px 0;
+    padding: 10px 0 16px 0;
     top: 0;
     overflow-x: hidden;
 }
 
 .searchbar--start {
-    margin-top: 33vh;
+    margin-top: 276px;
 }
 
 @media (min-width: 700px) {
@@ -64,8 +62,20 @@
         justify-content: left;
     }
     .searchbar--start {
-        margin-top: 33vh;
+        width: 100%;
+        left: 0;
         justify-content: center;
+    }
+}
+
+@media (min-width: 1020px) {
+    .searchbar {
+        padding: 40px 0 16px 0;
+    }
+    .input {
+        &:hover{
+            background-color: #E6E6E6;
+        }
     }
 }
     

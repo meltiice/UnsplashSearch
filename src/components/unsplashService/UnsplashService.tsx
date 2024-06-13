@@ -21,7 +21,7 @@ export class UnsplashService {
     }
 
     getRequest: getRequest = async(query, page) => {
-            const result = await fetch(`${this.url}search/photos?page=${page}&client_id=${this.client_id}&query=${query}`)
+            const result = await fetch(`${this.url}search/photos?page=${page}&client_id=${this.client_id}&query=${query}&per_page=30`)
                         .catch((err) => err)
             if (result.ok) {
                 const resJson = await result.json();
@@ -34,6 +34,9 @@ export class UnsplashService {
                 });
                 return resArr;
             }
+            else {
+                return [];
+            } 
     }
 }
 

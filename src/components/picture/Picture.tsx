@@ -15,7 +15,9 @@ const Picture = ({picLink, picLinkfull, alt_description}:Props) => {
     return (
         <React.Fragment>
         <li className={styles.picture} onClick={(e) => openPicture(e)}>
-           <img src={picLink} alt={alt_description} decoding='async' loading='lazy'/>
+            {picLink ? 
+            <img src={picLink} alt={alt_description} className={styles.img} decoding='async' loading='lazy'/> :
+            <div className={styles.img}></div>}
         </li>
         {openPic ? <OpenPicture href={picLinkfull} closeWindow={closePicture.bind(this)} alt_description={alt_description} /> : null}
         </React.Fragment>

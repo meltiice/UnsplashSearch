@@ -4,8 +4,12 @@
     padding: 14px 16px;
     border-radius: 12px;
     font-size: 16px;
+}
 
-    &:hover {
-        background-color: #C30000;
+@media (min-width: 1020px) {
+    .button {
+        &:hover {
+            background-color: #C30000;
+        }
     }
 }
